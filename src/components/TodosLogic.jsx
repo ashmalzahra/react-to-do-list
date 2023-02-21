@@ -36,10 +36,20 @@ const TodosLogic = () => {
     };
     setToDos([...todos, newToDo]);
   };
+  const setUpdate = (updatedTitle, id) => {
+    setToDos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.title = updatedTitle;
+        }
+        return todo;
+      })
+    );
+  };
   return (
     <div>
       <InputToDo addItem={addItem} />
-      <TodosList todosProps={todos} setToDos={setToDos} delItem={delItem} />
+      <TodosList todosProps={todos} setToDos={setToDos} delItem={delItem} setUpdate={setUpdate}/>
     </div>
   );
 };
