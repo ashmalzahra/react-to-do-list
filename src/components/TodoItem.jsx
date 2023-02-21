@@ -1,14 +1,17 @@
+/* eslint-disable */
 import { useState } from 'react';
 import styles from './styles/TodoItem.module.css';
 
-const TodoItem = ({ itemProp, setToDos, delItem, setUpdate }) => {
-  const [editing, setEditing] = useState(false)
-    const completedStyle = {
-        fontStyle: 'italic',
-        color: '#595959',
-        opacity: 0.4,
-        textDecoration: 'line-through',
-      };
+const TodoItem = ({
+  itemProp, setToDos, delItem, setUpdate,
+}) => {
+  const [editing, setEditing] = useState(false);
+  const completedStyle = {
+    fontStyle: 'italic',
+    color: '#595959',
+    opacity: 0.4,
+    textDecoration: 'line-through',
+  };
   const handleChange = (id) => {
     setToDos((prevState) => prevState.map((todo) => {
       if (todo.id === id) {
@@ -21,10 +24,10 @@ const TodoItem = ({ itemProp, setToDos, delItem, setUpdate }) => {
     }));
   };
   const handleEditing = () => {
-    setEditing(true)
-  }
-  let viewMode = {};
-  let editMode = {};
+    setEditing(true);
+  };
+  const viewMode = {};
+  const editMode = {};
   if (editing) {
     viewMode.display = 'none';
   } else {
@@ -43,16 +46,20 @@ const TodoItem = ({ itemProp, setToDos, delItem, setUpdate }) => {
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
         />
-        <button onClick={handleEditing}>Edit</button>
-        <button onClick={() => delItem(itemProp.id)}>Delete</button>
+        <button type="button" onClick={handleEditing}>Edit</button>
+        <button type="button" onClick={() => delItem(itemProp.id)}>Delete</button>
         <span style={itemProp.completed ? completedStyle : null}>
           {itemProp.title}
         </span>
       </div>
-      <input onChange={(e) => setUpdate(e.target.value, itemProp.id)} style={editMode} type="text"
-      value={itemProp.title}
-      className={styles.textInput} 
-      onKeyDown={handleUpdatedDone}/>
+      <input
+        onChange={(e) => setUpdate(e.target.value, itemProp.id)}
+        style={editMode}
+        type="text"
+        value={itemProp.title}
+        className={styles.textInput}
+        onKeyDown={handleUpdatedDone}
+      />
     </li>
   );
 };

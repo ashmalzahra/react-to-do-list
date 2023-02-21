@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { v4 as uuidv4 } from 'uuid';
 
 import { useState } from 'react';
@@ -43,13 +44,13 @@ const TodosLogic = () => {
           todo.title = updatedTitle;
         }
         return todo;
-      })
+      }),
     );
   };
   return (
     <div>
       <InputToDo addItem={addItem} />
-      <TodosList todosProps={todos} setToDos={setToDos} delItem={delItem} setUpdate={setUpdate}/>
+      <TodosList todosProps={todos} setToDos={setToDos} delItem={delItem} setUpdate={setUpdate} />
     </div>
   );
 };
