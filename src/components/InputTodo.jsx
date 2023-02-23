@@ -1,0 +1,39 @@
+/* eslint-disable */
+import { useState } from 'react';
+
+const InputToDo = ({ addItem }) => {
+  const [title, setTitle] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (title.trim()) {
+      addItem(title);
+      setTitle('');
+      setMessage('');
+    } else {
+      setMessage('Please add an item');
+    }
+  };
+  return (
+    <>
+      <form onSubmit={handleSubmit} className="form-container">
+        <input
+          type="text"
+          placeholder="Add Todo..."
+          value={title}
+          onChange={handleChange}
+          className="input-text"
+        />
+        <button type="button" className="input-submit">Submit</button>
+      </form>
+      <span className="submit-warning">{message}</span>
+    </>
+  );
+};
+
+export default InputToDo;
