@@ -124,9 +124,9 @@ In order to run this project you need:
 
 👤 **Ashmal Zahra**
 
-- GitHub: [@githubhandle](https://github.com/ashmalzahra)
-- Twitter: [@twitterhandle](https://twitter.com/AshmalZahraa)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ashmal-zahra-35bb09242/)
+- GitHub: [@ashmalzahra](https://github.com/ashmalzahra)
+- Twitter: [@AshmalZahraae](https://twitter.com/AshmalZahraa)
+- LinkedIn: [ashmal-zahra](https://www.linkedin.com/in/ashmal-zahra)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
